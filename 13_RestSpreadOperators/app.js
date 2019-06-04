@@ -61,11 +61,14 @@ console.log(validateShoppingList('oranges', 'bread', 'eggs'));
 // What if I want to rename calculateProduct without creating breaking changes...
 
 const MathLibrary = {
-    calculateProduct(a,b) {
-        return a * b;
+    calculateProduct(...rest) {
+        console.log('Please use the multiply method instead');
+        return this.multiply(...rest);
     },
     multiply(a,b) {
-        return a * b;
+        console.log(a * b);
     }
 };
 
+MathLibrary.calculateProduct(10,10);
+MathLibrary.multiply(5,5);
