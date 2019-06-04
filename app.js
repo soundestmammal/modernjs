@@ -19,5 +19,10 @@ function makeAjaxRequest(url, method) {
     // logic to make the request
 }
 
+// REFACTOR for ES6
+function makeAjaxRequest(url, method = 'GET') {
+    return method;
+}
+
 makeAjaxRequest('google.com');
 makeAjaxRequest('google.com', 'GET');
