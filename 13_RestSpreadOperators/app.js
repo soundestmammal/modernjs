@@ -24,3 +24,36 @@ function otherAddNumbers(...numbers) {
 }
 
 console.log(otherAddNumbers(1,2,3,4,5));
+
+// Spread Operator - Flatten or "Spread" them out.
+
+// suppose we want to display a pallate of colors to the user
+
+const defaultColors = ['red', 'green'];
+const userFavoriteColors = ['orange', 'yellow'];
+
+// A method available on every array
+console.log(defaultColors.concat(userFavoriteColors));
+
+// Achieve the same effect using the spread operator
+console.log([...defaultColors, ...userFavoriteColors]);
+
+// How is this different?
+console.log([...defaultColors, userFavoriteColors]);
+// This returns [ 'red', 'green', [ 'orange', 'yellow' ] ]
+
+// What is a benefit of this feature?
+
+const fallColors = ['fire red', 'fall orange'];
+console.log(['green', 'blue', ...fallColors, ...defaultColors, ...userFavoriteColors ]);
+
+// I can mix both the rest and the spread operators
+
+function validateShoppingList(...items) {
+    if (items.indexOf('milk') < 0) {
+        return ['milk', ...items ];
+    }
+    return items;
+}
+
+console.log(validateShoppingList('oranges', 'bread', 'eggs'));
