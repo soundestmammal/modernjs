@@ -58,8 +58,13 @@ function validateShoppingList(...items) {
 
 console.log(validateShoppingList('oranges', 'bread', 'eggs'));
 
+// What if I want to rename calculateProduct without creating breaking changes...
+
 const MathLibrary = {
     calculateProduct(a,b) {
+        return a * b;
+    },
+    multiply(a,b) {
         return a * b;
     }
 };
